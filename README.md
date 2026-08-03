@@ -1,0 +1,74 @@
+# deirdre
+
+A Claude Code agent that reviews your prose the way Deirdre McCloskey teaches writing: warm, witty, and gently merciless toward flab, fog, and pretension. It grounds every finding in a rule from *Economical Writing* (or the LLM-tic list), quotes the offending line, and supplies a concrete rewrite. A rule without a rewrite is a lecture — deirdre shows.
+
+It also hunts the tells of machine-written prose: the "It's not X, it's Y" antithesis, rule-of-three closings, "moreover/furthermore," intensifiers, and metacommentary.
+
+## What you get
+
+- **`agents/deirdre-writing-reviewer.md`** — the agent. Reviews drafts, essays, blog posts, READMEs, emails, marketing copy. Findings ordered by severity (🔴 clarity-breaking → 🟠 weakens the prose → 🟡 polish), each with a quoted original and a rewrite, closing with a verdict: publish / tighten-then-publish / needs a rewrite.
+- **`commands/deirdre.md`** — a `/deirdre` slash command that dispatches the agent.
+- **`scripts/llm-lint.sh`** — a grep-based linter that catches the mechanical tics (banned intensifiers, stock transitions, buzzword filler, the obvious not-X-it's-Y patterns). Exit 1 on hard failures, so it drops into CI or a pre-commit hook. The agent handles the judgment a regex can't: rhythm, argument, whether a cut adds joy or merely subtracts words.
+- **`STYLE_GUIDE.md`** — the doctrine: McCloskey's 35 rules (chapter list) plus a 20-item catalog of LLM writing tics.
+
+## Install
+
+Copy the agent and command into your Claude Code config:
+
+```bash
+git clone https://github.com/miqcie/deirdre.git
+cp deirdre/agents/deirdre-writing-reviewer.md ~/.claude/agents/
+cp deirdre/commands/deirdre.md ~/.claude/commands/
+```
+
+Optionally drop the linter into a writing repo:
+
+```bash
+cp deirdre/scripts/llm-lint.sh your-repo/scripts/
+```
+
+## Use
+
+In any Claude Code session:
+
+```
+/deirdre path/to/draft.md
+```
+
+Or just ask: "review this draft" — Claude dispatches the agent when a prose review fits.
+
+Run the linter directly:
+
+```bash
+scripts/llm-lint.sh path/to/post.md
+```
+
+## Example output
+
+```
+Scope: reviewing draft.md (1,400 words).
+
+🔴 Clarity-breaking
+> "It's not just a tool, it's a paradigm shift."
+LLM tic: not-X-it's-Y + inflated adjective. The sentence asserts
+significance instead of showing it.
+Rewrite: "The tool replaces a four-step manual process with one command."
+
+🟠 Weakens the prose
+> "There are several reasons why this approach is highly effective."
+McCloskey #25, active verbs. "There are" padding plus an intensifier.
+Rewrite: "This approach works for three reasons."
+
+Verdict: tighten-then-publish. The middle section argues well — the
+case study carries real weight. Fix the intro and the closer.
+```
+
+## Credit
+
+The doctrine comes from Deirdre McCloskey's *Economical Writing* (University of Chicago Press) — short, cheap, funny, and worth every page: https://press.uchicago.edu/ucp/books/book/chicago/E/bo29562607.html
+
+This repo is an homage, not an affiliation. Buy the book.
+
+## License
+
+MIT — see [LICENSE](LICENSE). (The license covers this repo's files; McCloskey's book remains her publisher's copyright, and only chapter titles are reproduced here.)
