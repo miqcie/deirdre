@@ -52,6 +52,10 @@ warn "8 absolutist claims"        "\b(always|never|the only way|every single)\b"
 warn "10 hedging"                 "\b(might|could|possibly|perhaps)\b"
 warn "11 unsourced authority"     "(studies show|experts agree|research suggests)"
 warn "13 rule-of-three"           "[a-z]+, [a-z]+,( and| or) [a-z]+\."
+warn "15 false-intimacy opener"   "here'?s the thing"
+
+# --- WARN: em-dash density (>3 per 100 words is a smell) ---
+dashes=$(grep -o -- '—' "$file" | wc -l | tr -d ' ')
 
 # --- WARN: weak-verb density (>6 per 100 words is a smell) ---
 words=$(wc -w < "$file")
@@ -61,6 +65,11 @@ if [[ "$words" -gt 0 ]]; then
   echo "INFO weak-verb density: $weak in $words words (${density} per 100)"
   if [[ "$density" -gt 6 ]]; then
     echo "WARN [14 weak-verb density] over 6 per 100 — tighten with concrete verbs"
+  fi
+  dash_density=$(( dashes * 100 / words ))
+  echo "INFO em-dash density: $dashes in $words words (${dash_density} per 100)"
+  if [[ "$dash_density" -gt 3 ]]; then
+    echo "WARN [16 em-dash density] over 3 per 100 — swap some for commas, parentheses, or a full stop"
   fi
 fi
 

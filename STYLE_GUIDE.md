@@ -45,15 +45,15 @@ From *Economical Writing*, 3rd edition, University of Chicago Press. Buy the boo
 ## LLM Writing Tics: What to Avoid
 
 1. **Inflated, vague language** — "revolutionary," "transformative," "paradigm shift," "unprecedented" without proof. Cut filler phrases: "It is important to note," "Needless to say." Replace generic nouns ("solution," "framework," "landscape," "ecosystem") with concrete terms.
-2. **Stock phrases and clichés** — "stands as a testament," "plays a vital role," "in today's fast-paced world." Vary connectors; drop "moreover/furthermore" when the flow is clear.
-3. **Over-structuring and mechanical cadence** — don't force lists and headings where a paragraph suffices; vary sentence length; limit "In summary" endings.
+2. **Stock phrases and clichés** — "stands as a testament," "plays a vital role," "in today's fast-paced world," the false-intimacy opener "Here's the thing." Vary connectors; drop "moreover/furthermore" when the flow is clear.
+3. **Over-structuring and mechanical cadence** — don't force lists and headings where a paragraph suffices; vary sentence length; limit "In summary" endings; skip the three-part essay pattern and "Top 10" shape when the topic needs nuance.
 4. **Empty summaries** — recaps should synthesize, not repeat. No "benefits include A, B, C" unless each item is specific and actionable.
 5. **Unsupported "significance" puffery** — no impact claims without data or citations; no "studies show" without naming sources.
 6. **Hedging/overconfidence whiplash** — don't mix "might, could, possibly" with definitive statements. Pick a stance.
 7. **Buzzwords without substance** — "synergy," "leverage," "robust," "scalable," "end-to-end," "best-in-class," "next-gen" — unless defined in context.
-8. **Template structures** — skip the three-part essay pattern and "Top 10" lists when the topic needs nuance.
+8. **Em-dash overuse** — the em dash is a spice, not a hinge; when every third sentence pivots on one, swap in commas, parentheses, or a full stop.
 9. **Qualifiers and intensifiers** — cut "very," "really," "quite," "extremely," "highly." Use precise verbs or metrics.
-10. **Misaligned tone** — no academic formalism for practical guides; no corporate speak where empathy is needed.
+10. **Misaligned or drifting tone** — no academic formalism for practical guides, no corporate speak where empathy is needed; hold one register from first line to last.
 11. **Redundant restatements** — don't repeat the thesis every few paragraphs; merge overlapping points.
 12. **Formatting gimmicks** — don't bold every key term, center text, or lean on decorative symbols.
 13. **Data without context** — tie numbers to comparisons, baselines, or decisions; otherwise omit.
@@ -62,5 +62,5 @@ From *Economical Writing*, 3rd edition, University of Chicago Press. Buy the boo
 16. **Overgeneralized advice** — add constraints, exceptions, or use cases.
 17. **Metacommentary** — cut "As an AI," "This article will explore," "We will delve into." Lead with the substance.
 18. **Weak verbs and needless passive** — replace "is/has/provides/there are" with concrete actions; passive only when the actor is unknown or irrelevant.
-19. **Tone drift and tense inconsistency** — keep tense, perspective, and terminology consistent across sections.
+19. **Tense and terminology drift** — keep tense, perspective, and terminology consistent across sections (don't swap synonyms that change meaning).
 20. **Generic conclusions** — no "In conclusion, X is important." End with a specific next step, decision, or implication.
