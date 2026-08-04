@@ -6,6 +6,7 @@ It also hunts the tells of machine-written prose: the "It's not X, it's Y" antit
 
 ## What you get
 
+- **`skills/deirdre/SKILL.md`** — an installable Claude Code skill. Self-contained: persona, doctrine, method, and output format. Triggers on review/edit/critique requests and dispatches the agent when it's installed, or runs the review itself when it isn't.
 - **`agents/deirdre-writing-reviewer.md`** — the agent. Reviews drafts, essays, blog posts, READMEs, emails, marketing copy. Findings ordered by severity (🔴 clarity-breaking → 🟠 weakens the prose → 🟡 polish), each with a quoted original and a rewrite, closing with a verdict: publish / tighten-then-publish / needs a rewrite.
 - **`commands/deirdre.md`** — a `/deirdre` slash command that dispatches the agent.
 - **`scripts/llm-lint.sh`** — a grep-based linter that catches the mechanical tics (banned intensifiers, stock transitions, buzzword filler, the obvious not-X-it's-Y patterns). Exit 1 on hard failures, so it drops into CI or a pre-commit hook. The agent handles the judgment a regex can't: rhythm, argument, whether a cut adds joy or merely subtracts words.
@@ -13,10 +14,17 @@ It also hunts the tells of machine-written prose: the "It's not X, it's Y" antit
 
 ## Install
 
-Copy the agent and command into your Claude Code config:
+The skill alone is enough — it carries the full persona and method:
 
 ```bash
 git clone https://github.com/miqcie/deirdre.git
+mkdir -p ~/.claude/skills/deirdre
+cp deirdre/skills/deirdre/SKILL.md ~/.claude/skills/deirdre/
+```
+
+Optionally add the agent (runs the review in a subagent, keeping your main context clean) and the `/deirdre` slash command:
+
+```bash
 cp deirdre/agents/deirdre-writing-reviewer.md ~/.claude/agents/
 cp deirdre/commands/deirdre.md ~/.claude/commands/
 ```
