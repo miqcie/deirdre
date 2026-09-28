@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# llm-lint.sh — flag the mechanical LLM writing tics from STYLE_GUIDE.md
+# llm-lint.sh — flag the mechanical LLM writing tics from skills/deirdre/STYLE_GUIDE.md
 # Usage: scripts/llm-lint.sh path/to/post.md
 # Exit 1 if any HARD rule fires. WARN rules print but don't fail (they need judgment).
 # ponytail: grep-based, not an NLP grader — catches the mechanical tics, the human ear catches the rest.
