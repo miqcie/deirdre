@@ -50,6 +50,8 @@ Run the linter directly:
 scripts/llm-lint.sh path/to/post.md
 ```
 
+The linter checks only your own prose. It skips front matter, code, blockquotes, and text in double quotes, because a quoted tic is an example, not a use. To keep a tic on purpose, add `<!-- llm-lint: ignore -->` to the line. `scripts/test-llm-lint.sh` tests these rules.
+
 ## Example output
 
 ```
