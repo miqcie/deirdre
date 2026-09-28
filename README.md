@@ -72,6 +72,10 @@ Verdict: tighten-then-publish. The middle section argues well — the
 case study carries real weight. Fix the intro and the closer.
 ```
 
+## Releases
+
+Versions follow [Semantic Versioning](https://semver.org). See [CHANGELOG.md](CHANGELOG.md) and the [GitHub Releases](https://github.com/miqcie/deirdre/releases). `/plugin update deirdre@deirdre` installs the newest version.
+
 ## Credit
 
 The doctrine comes from Deirdre McCloskey's *Economical Writing* (University of Chicago Press) — short, cheap, funny, and worth every page: https://press.uchicago.edu/ucp/books/book/chicago/E/bo29562607.html
